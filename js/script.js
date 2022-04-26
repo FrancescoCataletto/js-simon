@@ -24,6 +24,12 @@ const guessNumArr = [];
 // array numeri random
 const randomNumArr = [];
 
+// array numeri indovinati
+const guessedNumArr = [];
+
+// contatore numeri indovinati
+let counter = 0;
+
 
 // ciclo per generare il num random e stamparlo in html
 for(let i = 0; i < numLimit; i++){
@@ -41,10 +47,10 @@ function getRandomNum(min, max){
 // pulizia dell'html dopo 5 secondi
 setTimeout(function(){
     visual.innerHTML = " ";
-}, 5000)
+}, 1000)
 
 // funzione che si attiva dopo 6 secondi e chiede i numeri
-setTimeout(askNumber, 6000)
+setTimeout(askNumber, 2000)
 
 // funzione per chiedere all'utente di inserire 5 numeri 
 function askNumber(){
@@ -52,7 +58,20 @@ function askNumber(){
     for(let i = 0; i < numLimit; i++){
         guessedNumber = parseInt(prompt("Inserisci i numeri memorizzati"));
         guessNumArr.push(guessedNumber);
-    };
-    console.log(guessNumArr); 
+        if(guessNumArr[i] === randomNumArr[i]){
+            counter++;
+            guessedNumArr.push(guessNumArr[i]);
+            console.log(guessedNumArr);
+        }
+    }
+    if(guessedNumArr.length === 1){
+        visual.innerHTML = `Hai azzeccato ${counter} numero.`;
+        document.getElementById("guessed-num").innerHTML = `Il numero azzeccato è ${guessedNumArr}`;
+    }else if(guessedNumArr.length > 1){
+        visual.innerHTML = `Hai azzeccato ${counter} numeri.`;
+        document.getElementById("guessed-num").innerHTML = `I numeri azzeccati sono ${guessedNumArr}`;
+    }else if(guessedNumArr.length === 0){
+        visual.innerHTML = `Non hai azzeccato neanche un numero`;
+    }
 }
 
