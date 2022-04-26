@@ -21,10 +21,21 @@ for(let i = 0; i < numLimit; i++){
 }
 
 // funzione numero random
-function getRandomNum(min, max){
+function getRandomNum(min, max){67
     return Math.floor(Math.random() * (max - min) + min);
 }
 
+const guessNumArr = [];
+
 setTimeout(function(){
-    console.log("Sono passati 5 secondi")
+    askNumber();
 }, 5000);
+
+function askNumber(){
+    let guessedNumber;
+    for(let i = 0; i < numLimit; i++){
+        guessedNumber = prompt("Inserisci i numeri memorizzati");
+        guessNumArr.push(guessedNumber);
+    };
+    console.log(guessNumArr); 
+}
