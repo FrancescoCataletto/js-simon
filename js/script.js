@@ -25,12 +25,15 @@ function getRandomNum(min, max){67
     return Math.floor(Math.random() * (max - min) + min);
 }
 
+// array dei numeri che l'utente scrive dal prompt
 const guessNumArr = [];
 
+// funzione che si arriva dopo 5 secondi
 setTimeout(function(){
     askNumber();
 }, 5000);
 
+// funzione per chiedere all'utente di inserire 5 numeri 
 function askNumber(){
     let guessedNumber;
     for(let i = 0; i < numLimit; i++){
