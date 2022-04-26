@@ -6,3 +6,16 @@ Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei num
 
 
  */
+
+const numLimit = 5;
+let randomNum;
+
+for(let i = 0; i < numLimit; i++){
+    randomNum = getRandomNum();
+    document.getElementById("random-num").append(randomNum + " ");
+}
+
+function getRandomNum(){
+    return Math.floor(Math.random() * 5 + 1);
+}
+
