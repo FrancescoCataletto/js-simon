@@ -20,11 +20,11 @@ for(let i = 0; i < numLimit; i++){
     document.getElementById("random-num").append(randomNum + " ");
 }
 
-
-
-
 // funzione numero random
 function getRandomNum(min, max){
     return Math.floor(Math.random() * (max - min) + min);
 }
 
+setTimeout(function(){
+    console.log("Sono passati 5 secondi")
+}, 5000);
