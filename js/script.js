@@ -7,35 +7,44 @@ Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei num
 
  */
 
+const visual = document.getElementById("random-num");
+
 // range id numeri determinato da utente
 const numRange = 100;
+
 // numero di numeri casuali generati
 const numLimit = 5;
+
 // variabile del numero random
 let randomNum;
 
+// array dei numeri che l'utente scrive dal prompt
+const guessNumArr = [];
+
+// array numeri random
 const randomNumArr = [];
+
 
 // ciclo per generare il num random e stamparlo in html
 for(let i = 0; i < numLimit; i++){
     randomNum = getRandomNum(1, numRange);
     randomNumArr.push(randomNum);
-    document.getElementById("random-num").append(randomNum + " ");
+    visual.append(randomNum + " ");
 }
 console.log(randomNumArr);
 
-// funzione numero random
-function getRandomNum(min, max){67
+// funzione numero random4
+function getRandomNum(min, max){
     return Math.floor(Math.random() * (max - min) + min);
 }
 
-// array dei numeri che l'utente scrive dal prompt
-const guessNumArr = [];
-
-// funzione che si arriva dopo 5 secondi
+// pulizia dell'html dopo 5 secondi
 setTimeout(function(){
-    askNumber();
-}, 5000);
+    visual.innerHTML = " ";
+}, 5000)
+
+// funzione che si attiva dopo 6 secondi e chiede i numeri
+setTimeout(askNumber, 6000)
 
 // funzione per chiedere all'utente di inserire 5 numeri 
 function askNumber(){
@@ -46,3 +55,4 @@ function askNumber(){
     };
     console.log(guessNumArr); 
 }
+
