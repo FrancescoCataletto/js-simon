@@ -14,11 +14,15 @@ const numLimit = 5;
 // variabile del numero random
 let randomNum;
 
+const randomNumArr = [];
+
 // ciclo per generare il num random e stamparlo in html
 for(let i = 0; i < numLimit; i++){
     randomNum = getRandomNum(1, numRange);
+    randomNumArr.push(randomNum);
     document.getElementById("random-num").append(randomNum + " ");
 }
+console.log(randomNumArr);
 
 // funzione numero random
 function getRandomNum(min, max){67
@@ -37,7 +41,7 @@ setTimeout(function(){
 function askNumber(){
     let guessedNumber;
     for(let i = 0; i < numLimit; i++){
-        guessedNumber = prompt("Inserisci i numeri memorizzati");
+        guessedNumber = parseInt(prompt("Inserisci i numeri memorizzati"));
         guessNumArr.push(guessedNumber);
     };
     console.log(guessNumArr); 
