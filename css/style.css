@@ -1,0 +1,33 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 100vh;
+    background-color: chocolate;
+}
+
+#random-num{
+    display: flex;
+    align-items: center;
+    padding: 0 30px;
+    background-color: cornflowerblue;
+    border-radius: 25px;
+    height: 10vh;
+}
+
+#guessed-num{
+    display: flex;
+    align-items: center;
+    padding: 0 30px;
+    background-color: cornflowerblue;
+    border-radius: 25px;
+    height: 10vh;
+}
