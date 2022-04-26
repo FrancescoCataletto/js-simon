@@ -47,10 +47,10 @@ function getRandomNum(min, max){
 // pulizia dell'html dopo 5 secondi
 setTimeout(function(){
     visual.innerHTML = " ";
-}, 1000)
+}, 5000)
 
 // funzione che si attiva dopo 6 secondi e chiede i numeri
-setTimeout(askNumber, 2000)
+setTimeout(askNumber, 6000)
 
 // funzione per chiedere all'utente di inserire 5 numeri 
 function askNumber(){
